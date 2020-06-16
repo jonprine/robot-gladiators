@@ -1,3 +1,8 @@
+//Game States
+// "WIN" - Player robot has defeated all enemy robots
+//      * Fight all enemy robots
+//      * Defeat each enemy robot
+// "LOSE" - Player robot's health is zero or less
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -30,7 +35,7 @@ var fight = function() {
                 window.alert(enemyName + " has died!");
             }
             else {
-                window.alert(enemyName + " still has " +enemyHealth + " health left.");
+                window.alert(enemyName + " still has " + enemyHealth + " health left.");
             }
     
             // Subtract the value of 'enemyAttack' from the value of 'playerHealth' and use that result to update the vaule in the 'playerHealth' variable.
@@ -50,20 +55,19 @@ var fight = function() {
             // if player choses to skip
         } else if (promptFight === "skip" || promptFight === "SKIP") {
             // confirm user wants to skip
-            var confirmSkip = window.confirm("Are you sure you'd like to quit?")
-
+            var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+          
             // if yes (true), leave fight
             if (confirmSkip) {
-                window.alert(playerName + " has decided to skip this fight. Goodbye!");
-                // subtract money from playerMoney for skipping
-                playerMoney = playerMoney -2;
+              window.alert(playerName + " has decided to skip this fight. Goodbye!");
+              // subtract money from playerMoney for skipping
+              playerMoney = playerMoney - 2;
             }
             // if no (false), ask question again by running fight() again
             else {
-                fight();
+              fight();
             }
-            window.alert(playerName + " has chosen to skip the fight!");
-        } else {
+          }  else {
             window.alert("You need to pick a valid option. Try again!");
         }
 };
